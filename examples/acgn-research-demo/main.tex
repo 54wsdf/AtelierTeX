@@ -1,0 +1,31 @@
+\documentclass[profile=editorial]{atelier}
+\AtelierUseACGNBibliography
+\addbibresource{examples/acgn-research-demo/references.bib}
+
+\title{ACGN 跨媒介研究示例}
+\subtitle{游戏、动画、漫画、音乐与 Live 的统一引用}
+\author{AtelierTeX Demo}
+
+\begin{document}
+\maketitle
+
+\section{为什么需要媒体级定位}
+
+二次元研究的材料往往不是单一“书/论文”。同一论证可能同时引用游戏本体\cite{demo_game}、具体角色剧情\cite{demo_commu}、动画单集\cite[00:12:31--00:12:46]{demo_anime}、漫画单话\cite[45--52]{demo_manga}、角色歌\cite{demo_song}与舞台演出\cite{demo_live}。
+
+AtelierTeX 将正式 BibLaTeX entry type 与 `verba` 媒体导航标签分开，使书目规范和 ACGN 可读性可以同时保留。
+
+\begin{AtelierOriginal}
+日本語の一次資料は、必要な短い範囲だけ引用する。
+\end{AtelierOriginal}
+
+\begin{AtelierTranslation}
+日文 primary text 只引用论证所需的短片段；长场景应通过精确 locator 转述与分析。
+\end{AtelierTranslation}
+
+\section{FAN LOCATOR 的位置}
+
+玩家整理可以帮助找到原作位置\cite{demo_locator}，但当论文判断依赖作品事实时，应回到游戏、动画、漫画或其他 primary source 复核。
+
+\printbibliography
+\end{document}

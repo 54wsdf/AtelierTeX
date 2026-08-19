@@ -1,0 +1,34 @@
+\documentclass[profile=academic]{atelier}
+
+\title{Long-form Research Sample}
+\subtitle{Sections, long tables, and evidence placeholders}
+\author{AtelierTeX Project}
+\kicker{Structural Test}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Problem and scope}
+\AtelierLead{A long-form document needs stable sectioning, readable tables, and float behavior that does not depend on manual page placement.}
+
+\subsection{Evidence object}
+\AtelierPlaceholderFigure{Reserved evidence area; replace with a source-backed figure.}{A placeholder that keeps figure semantics visible during drafting.}
+
+\section{Cross-page table}
+\begin{longtable}{p{0.18\linewidth}p{0.32\linewidth}p{0.38\linewidth}}
+\toprule
+Stage & Responsibility & Acceptance condition \\
+\midrule
+\endfirsthead
+\toprule
+Stage & Responsibility & Acceptance condition \\
+\midrule
+\endhead
+Draft & Explore competing explanations & Claims remain distinguishable from verified findings. \\
+Review & Inspect structure and evidence & Every promoted claim has a locator or an explicit unresolved status. \\
+Release & Freeze a reproducible artifact & Source, build instructions, and output version agree. \\
+\bottomrule
+\end{longtable}
+
+\end{document}

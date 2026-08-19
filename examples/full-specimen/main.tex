@@ -1,0 +1,202 @@
+% 防退化说明：feature 与 symposium 必须消费同一份完整样张和书目数据；
+% 独立编译入口只选择排版，不能复制正文形成两套漂移的公开示例。
+\ifdefined\AtelierSpecimenTitleLayout
+  \documentclass[profile=editorial,titlelayout=\AtelierSpecimenTitleLayout]{atelier}
+\else
+  \documentclass[profile=editorial,titlelayout=feature]{atelier}
+\fi
+\AtelierUseACGNBibliography
+% 防退化说明：发布脚本从仓库根目录编译本文件；书目使用根目录相对路径，
+% 确保 Biber 在脚本和手工命令中读取同一份标准数据。
+\addbibresource{examples/gbt7714-acgn-profile/references.bib}
+
+\usepackage{geometry}
+\geometry{a4paper,margin=20mm}
+\usepackage{booktabs,longtable,tabularx,array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\MiniTableHead}{%
+\textbf{Media / Carrier Tag} & \textbf{对象} & \textbf{GB/T 正式类型层} & \textbf{常用 Locator}}
+
+\kicker{ATELIERTEX / PUBLIC SPECIMEN}
+\title{ATX-ACGN-REF 0.4 Rendered Specimen}
+\subtitle{GB/T 7714-2025 × ACGN 跨媒介引用 × 多语种长文 × 文件载体反查}
+\author{AtelierTeX Project · 54wsdf}
+\publicationdate{2026-08-18}
+\versionnote{公共样张 · canonical bibliography 与正文引用同步渲染}
+\AtelierSetEnglishTitle{A Rendered Specimen for Multilingual ACGN and Cross-media Research}
+\AtelierSetAffiliation{AtelierTeX Project}
+\AtelierSetContact{https://github.com/54wsdf/AtelierTeX}
+\AtelierSetDocumentMeta{PUBLIC SPECIMEN / ATX-ACGN-REF 0.4}
+\AtelierSetAuthorNote{Feature 与 Symposium 使用同一份元数据、正文和 canonical bibliography。}
+\AtelierSetPublicationName{ATELIERTEX PUBLIC SPECIMEN}
+\AtelierSetPublicationTheme{ACGN / MULTILINGUAL / CROSS-MEDIA / LONGFORM}
+\AtelierSetOrganizer{ATELIERTEX PROJECT}
+
+\begin{document}
+\maketitle
+
+\section{项目与规范定位}
+AtelierTeX 面向 ACGN、二次元与跨媒介研究中的多语种长篇写作。ATX-ACGN-REF 把引用拆为三个层次：GB/T 7714-2025 正式著录、ATX Media Tag，以及作品内部或数字对象内部的 Locator。
+
+\AtelierLead{方括号文献类型保持正式 GB/T 层；GAME、COMM、ANIME、MANGA、MUSIC、LIVE、CARD 等对象身份进入 Media Tag；STEP、episode、chapter、page、timestamp、track、asset ID、version、commit 等进入 Locator。}
+
+\begin{tabularx}{\textwidth}{@{}p{40mm}Y@{}}
+\textbf{GB/T 7714-2025} & 责任者、题名、出版/发布信息、正式文献类型与载体标识。\\
+\textbf{ATX Media Tag} & ACGN、研究对象、软件工程对象与文件载体的语义身份。\\
+\textbf{ATX Locator} & 作品内部、网页内部、文件内部和版本内部的精确位置。\\
+\end{tabularx}
+
+\section{支持范围总览}
+\small
+\begin{longtable}{@{}p{31mm}p{37mm}p{42mm}p{45mm}@{}}
+\toprule
+\MiniTableHead\\
+\midrule
+\endfirsthead
+\toprule
+\MiniTableHead\\
+\midrule
+\endhead
+GAME & 游戏本体 / 客户端 & [CP/OL]、[EB/OL] & platform、version、release \\
+GAME VERSION & 游戏版本 / Patch & [CP/OL]、[EB/OL] & version、build、date \\
+DLC & DLC / 扩展包 & [CP/OL]、[EB/OL] & DLC name、version \\
+PATCH & 更新说明 & [EB/OL]、[CP/OL] & version、date \\
+SEASON & 赛季 / 周期性内容 & [EB/OL]、[CP/OL] & season、phase \\
+COMM & 游戏剧情 / 角色剧情 & [CP/OL] & STEP、episode、route、branch \\
+STORY & 主线章节 & [CP/OL]、[EB/OL] & chapter、node \\
+ROUTE & 路线剧情 / Ending & [CP/OL] & route、chapter、ending \\
+EVENT & 游戏活动剧情 & [CP/OL]、[EB/OL] & event、phase、story node \\
+CARD & 卡面 / 支援卡 & [EB/OL]、[Z/OL] & card name、rarity、asset ID \\
+CG & 视觉 CG / 官方图像 & [EB/OL]、[Z/OL] & scene、asset ID、release \\
+COSTUME & 服装 / 3D 外观 & [EB/OL]、[Z/OL] & costume、version \\
+3D MODEL & 模型 / 模型展示 & [EB/OL]、[Z/OL] & model、pose、asset ID \\
+CHARACTER FILE & 角色档案 & [EB/OL] & character、profile field \\
+SETTING FILE & 世界观 / 设定页 & [EB/OL]、[M/OL] & section、page \\
+CREATOR FILE & 创作者档案 / staff & [EB/OL] & creator、role \\
+PV & 宣传 PV / CM & [EB/OL]、[Z/OL] & timestamp \\
+MV & 音乐影像 & [EB/OL]、[Z/OL] & timestamp、cut \\
+ANIME & 动画系列 & [Z/OL]、[EB/OL] & season、episode \\
+ANIME EP & 动画单集 & [Z/OL]、[EB/OL] & episode、timestamp \\
+OVA / OAD & 特典动画 & [Z]、[Z/OL] & episode、timestamp \\
+FILM & 剧场版 / 电影 & [Z]、[Z/OL] & timestamp、scene \\
+MANGA VOL & 漫画单行本 & [M]、[M/OL] & volume、page \\
+MANGA CH & 漫画单话 / Web 章节 & [M]、[M/OL]、[EB/OL] & chapter、page \\
+WEB MANGA & Web 漫画 & [EB/OL] & chapter、update \\
+NOVEL VOL & 轻小说 / 小说卷 & [M] & volume、page \\
+NOVEL CH & 小说章节 & [M] & chapter、page \\
+WEB NOVEL & Web 小说 & [EB/OL] & chapter、update \\
+DOUJIN & 同人志 / 展会刊物 & [M]、[Z] & edition、event、page \\
+FANBOOK & 官方 / 同人 fan book & [M]、[EB/OL] & page、plate \\
+ARTBOOK & 画集 / 视觉资料集 & [M]、[EB/OL] & page、plate \\
+GUIDEBOOK & 攻略 / 公式资料 & [M]、[EB/OL] & page、section \\
+MUSIC SINGLE & Single & [Z/OL]、[EB/OL] & catalog、release \\
+MUSIC ALBUM & Album / Collection & [Z/OL]、[EB/OL] & disc、track \\
+MUSIC TRACK & 单首歌曲 / 音轨 & [Z/OL]、[EB/OL] & track、version \\
+OST & Original Soundtrack & [Z/OL]、[EB/OL] & disc、track \\
+DRAMA CD & 广播剧 / 语音剧 & [Z]、[Z/OL] & disc、track、timestamp \\
+RADIO & 广播 / 网络广播 & [EB/OL]、[Z/OL] & episode、timestamp \\
+PODCAST & Podcast & [EB/OL]、[Z/OL] & episode、timestamp \\
+LIVE & 线下 / 3D Live & [Z]、[EB/OL] & date、act、song \\
+LIVE VIDEO & Live 录像 / 配信 & [Z/OL]、[EB/OL] & timestamp、song \\
+STAGE & 舞台剧 / 朗读剧 & [Z]、[EB/OL] & act、scene \\
+STREAM & 官方直播 / 配信 & [EB/OL] & date、timestamp \\
+SOCIAL & 官方社交媒体 & [EB/OL] & post date、post ID \\
+INTERVIEW & 采访 / 创作谈 & [N/OL]、[EB/OL] & section、question、timestamp \\
+NEWS & 官网页新闻 / 公告 & [N/OL]、[EB/OL] & date、section \\
+FAN LOCATOR & Wiki / 玩家指路 & [EB/OL] & locator only \\
+FAN STUDY & 同人研究 / 玩家长文 & [EB/OL]、[J/OL] & section、paragraph \\
+STANDARD & 标准 / 规范 & [S]、[S/OL] & clause、edition \\
+REPORT & 研究报告 / 白皮书 & [R]、[R/OL] & page、section \\
+PREPRINT & 预印本 & [PP/OL] & version、page \\
+DATASET & 数据集 & [DS]、[DS/OL] & version、table、field \\
+DATABASE & 数据库 & [DB]、[DB/OL] & query、record \\
+SOFTWARE & 软件 & [CP]、[CP/OL] & version、platform \\
+REPOSITORY & Git 仓库 & [CP/OL]、[EB/OL] & tag、branch \\
+RELEASE & Release / 发行包 & [CP/OL]、[EB/OL] & version、filename \\
+COMMIT & Commit / 修订记录 & [EB/OL] & commit SHA \\
+ISSUE / PR & Issue / Pull Request & [EB/OL] & number、comment \\
+CODE & 源代码文件 & [CP/OL] & file、line、commit \\
+NOTEBOOK & Jupyter Notebook & [CP/OL]、[DS/OL] & cell ID、execution \\
+PDF & PDF 文件载体 & 由内容身份决定 & page、section、version \\
+DOCX & Word OOXML 文档 & 由内容身份决定 & page、heading、version \\
+PPTX & PowerPoint OOXML & 由内容身份决定 & slide、version \\
+XLSX & Excel OOXML & [DS/OL] 或内容身份 & sheet、cell range \\
+CSV & CSV 数据文件 & [DS/OL] & row、column、version \\
+JSON & JSON 数据 / Schema & [DS/OL]、[S/OL] & JSON Pointer、version \\
+YAML & YAML 配置 / 数据 & [DS/OL]、[S/OL] & key path、version \\
+XML & XML 数据 / 标记 & [DS/OL]、[S/OL] & XPath、part name \\
+IPYNB & Jupyter Notebook 文件 & [CP/OL]、[DS/OL] & cell ID、execution \\
+PNG / JPEG & 栅格图像 & [Z/OL]、[EB/OL] & figure、asset ID \\
+SVG & SVG 图像 & [Z/OL]、[EB/OL] & element、figure \\
+AUDIO FILE & MP3 / WAV / FLAC & [Z/OL]、[EB/OL] & track、timestamp \\
+VIDEO FILE & MP4 / MOV / MKV & [Z/OL]、[EB/OL] & timestamp、scene \\
+SUBTITLE & VTT / SRT 字幕轨 & [EB/OL]、[Z/OL] & timestamp、cue \\
+ARCHIVE & ZIP / TAR / 归档包 & [CP/OL]、[EB/OL] & version、filename \\
+WEB ARCHIVE & 网页快照 / 归档 & [EB/OL] & snapshot date \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\clearpage
+\section{真实来源与正文引用方式}
+
+公共 canonical bibliography 目前使用 42 条记录。ACGN 高频项优先采用第一方来源：
+《学園アイドルマスター》游戏本体\cite{gakumas_game}、篠澤広角色档案\cite{hiro_character_file}、剧情节点\cite[STEP1 / Episode 8]{hiro_commu_step1_08}、《光景》曲目与单曲\cite{hiro_song_koukei,hiro_1st_single}、DEBUT LIVE 初 TOUR\cite{gakumas_debut_live_hatsukoi}；动画采用《ウマ娘 プリティーダービー》第1R\cite[Episode 1]{umamusume_anime_ep01}；漫画和轻小说采用 KADOKAWA 书目\cite{haruhi_manga_vol1,haruhi_novel_vol1}；创作访谈采用 Nintendo Ask the Developer\cite{mario_wonder_developer_interview}。
+
+普通学术与技术来源同表共存：Nature 期刊论文\cite{mnih2015dqn}、MIT Press 图书\cite{sutton_barto_2018}、NeurIPS 会议论文\cite{vaswani2017attention}、Caltech 学位论文\cite{vanhorn2019visipedia}、NIST 报告\cite{nist_ai_rmf_2023}、GB/T 7714-2025\cite{gbt7714_2025}、UCI 数据集\cite{uci_iris}与 PageRank 专利\cite{page2001pagerank}。
+
+作品内部定位直接使用 BibLaTeX postnote：
+\begin{verbatim}
+\cite[STEP1 / Episode 8]{hiro_commu_step1_08}
+\cite[Episode 1]{umamusume_anime_ep01}
+\cite[Vol. 1]{haruhi_manga_vol1}
+\end{verbatim}
+
+\section{文件载体反查}
+\small
+\begin{longtable}{@{}p{22mm}p{50mm}p{47mm}p{46mm}@{}}
+\toprule
+\textbf{文件 / 载体} & \textbf{常见内容身份} & \textbf{ATX Media / Carrier Tag} & \textbf{Locator}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{文件 / 载体} & \textbf{常见内容身份} & \textbf{ATX Media / Carrier Tag} & \textbf{Locator}\\
+\midrule
+\endhead
+.pdf & 论文、预印本、报告、标准、设定集 & PAPER / PREPRINT / REPORT / STANDARD / PDF & page、section、version \\
+.docx & 手稿、报告、访谈转写、说明书 & MANUSCRIPT / REPORT / TRANSCRIPT / DOCX & heading、page、version \\
+.pptx & 会议幻灯片、报告、课程材料 & SLIDES / PRESENTATION / PPTX & slide、version \\
+.xlsx & 原始表、实验结果、统计数据 & DATASET / XLSX & sheet、cell range \\
+.csv & 数据集、索引、导出数据 & DATASET / CSV & row、column、version \\
+.json & 数据集、API 导出、Schema、配置 & DATASET / JSON & JSON Pointer、version \\
+.yaml/.yml & 配置、元数据、目录、Schema & DATASET / YAML & key path、version \\
+.ipynb & Notebook、计算过程、实验记录 & NOTEBOOK / IPYNB & cell ID、execution count \\
+.png/.jpg & 截图、卡面、图表、扫描件 & IMAGE / CARD / CG / PNG & figure、asset ID、crop \\
+.svg & 图表、矢量插画、界面资产 & IMAGE / SVG & element、figure \\
+.mp3/.wav/.flac & 歌曲、广播、语音剧、音频资产 & MUSIC / RADIO / DRAMA CD / AUDIO FILE & track、timestamp \\
+.mp4/.mov/.mkv & 动画、MV、PV、Live、录像 & ANIME / MV / PV / LIVE VIDEO / VIDEO FILE & episode、timestamp \\
+.vtt/.srt & 字幕、时间轴、转写辅助 & SUBTITLE & cue、timestamp \\
+.zip/.tar.* & 软件发行包、数据快照、归档包 & RELEASE / ARCHIVE & version、filename \\
+.tex/.bib & LaTeX 源码、书目数据库 & SOURCE FILE / BIBLIOGRAPHY & file、line、commit \\
+.md/.rst & 文档、README、规范源文件 & DOCUMENT / SOURCE FILE & heading、line、commit \\
+.xml & OOXML 内部、数据、元数据、规范 & XML / DATASET & XPath、part name \\
+web page & 角色页、新闻、公告、索引、社媒 & CHARACTER FILE / NEWS / FAN LOCATOR / SOCIAL & date、section、post ID \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{文件格式与软件工程真实来源}
+JSON\cite{rfc8259_json}、CSV\cite{rfc4180_csv}、YAML\cite{yaml_122}、Office Open XML\cite{ecma376_ooxml}、PNG\cite{w3c_png3}、SVG\cite{w3c_svg2}、WebVTT\cite{w3c_webvtt}、ZIP\cite{pkware_zip_appnote}与 Jupyter Notebook\cite{jupyter_nbformat}使用各自标准组织或官方项目文档。软件和仓库对象使用 Python 3.14.0\cite{python_3140}、AtelierTeX\cite{ateliertex_repo} 和 biblatex-gb7714-2025\cite{biblatex_gb7714_repo}。
+
+\section{完整参考文献渲染}
+`FAN LOCATOR` 保留一条 format-only fixture，用于验证字段结构与 renderer；其余条目来自 canonical bibliography。
+\nocite{fan_locator_fixture}
+\ifstrequal{\AtelierActualGBStyle}{gb7714-2025}{\nocite{vaswani2017attention_preprint}}{}
+\printbibliography
+
+\section{Word / DOCM Companion 方向}
+ATX-ACGN-REF 的对象类型、Media Tag、Locator 与 GB/T 7714-2025 正式层可以复用于 Word `.docm` 工具。Word 版本重点提供字段录入、下拉选择、Locator 表单、媒体标签、参考文献生成与校验；LaTeX 与 Word 共用同一套规范语义。
+
+\vfill
+{\footnotesize 本样张的 canonical bibliography 采用 42 条公共记录；ACGN 高频项优先使用第一方来源，普通学术与技术项使用出版社、标准组织、大学机构库、数据集和软件项目的权威页面。}
+\end{document}

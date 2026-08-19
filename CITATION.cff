@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use AtelierTeX or ATX-ACGN-REF in research, please cite this project."
+title: "AtelierTeX"
+type: software
+authors:
+  - name: "54wsdf"
+version: "0.5.0"
+date-released: "2026-08-20"
+repository-code: "https://github.com/54wsdf/AtelierTeX"
+url: "https://github.com/54wsdf/AtelierTeX"
+license: "LPPL-1.3c"
+keywords:
+  - "LaTeX"
+  - "ACGN"
+  - "anime"
+  - "manga"
+  - "game studies"
+  - "GB/T 7714-2025"
+  - "ATX-ACGN-REF"
+  - "multilingual typesetting"
+  - "long-form writing"
+  - "CJK"
+  - "bibliography"
+abstract: >-
+  AtelierTeX is an open-source multilingual long-form LaTeX framework for
+  ACGN, cross-media humanities, visual research and narrative scholarship.
+  The project maintains ATX-ACGN-REF 0.4, an ACGN and cross-media citation
+  profile built on GB/T 7714-2025 with media tags, locators and file-carrier
+  mapping, together with rendered PDF specimens and publication-profile APIs.

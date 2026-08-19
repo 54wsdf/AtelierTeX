@@ -1,0 +1,30 @@
+\documentclass[profile=editorial]{atelier}
+
+\title{Multilingual Editorial Sample}
+\subtitle{Semantic language blocks without manual font switching}
+\author{AtelierTeX Project}
+\kicker{Portable Example}
+
+\begin{document}
+\maketitle
+
+\section{中文主文}
+这是一个简体中文段落，用于检查字体、标点、断行与西文混排。作者只声明内容语种，不直接指定字体文件。
+
+% 防退化说明：该行覆盖 SimSun 缺少日文中点时的跨引擎回退，不能改成手工字体切换。
+跨语种标点样例：A・B；日文词形样例：音楽・メール、選抜試験；姓名字形样例：髙﨑・邊見。
+日文正字样例：戦闘・雰囲気・豊か・児童・読書・対応・発売決定。
+
+\begin{AtelierLanguage}{ja}
+日本語の約物を確認する。「引用」と『入れ子の引用』を同じ段落で扱う。
+\end{AtelierLanguage}
+
+\begin{AtelierTranslation}{zh-Hans}
+本段是上方日文示例的中文翻译区。环境表达语义，profile 决定视觉样式。
+\end{AtelierTranslation}
+
+\begin{AtelierLanguage}{en}
+English text, mathematical symbols $\alpha + \beta = \gamma$, and CJK text can coexist in one source file.
+\end{AtelierLanguage}
+
+\end{document}

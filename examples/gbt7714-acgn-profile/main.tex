@@ -1,0 +1,65 @@
+\documentclass[profile=editorial]{atelier}
+\AtelierUseACGNBibliography
+% 防退化说明：仓库编译测试与公开命令都从根目录执行；书目文件使用根目录
+% 相对路径，确保示例在脚本和手工命令中读取同一份数据。
+\addbibresource{examples/gbt7714-acgn-profile/references.bib}
+
+\title{ATX-ACGN-REF 0.4}
+\subtitle{GB/T 7714-2025 + ACGN Media Index · Real-world Citation Showcase}
+\author{AtelierTeX Project}
+\publicationdate{2026-08-18}
+\versionnote{Public real-world fixture · first-party and authoritative sources preferred}
+
+\begin{document}
+\maketitle
+
+\section{正文引用方式}
+
+普通作品、角色档案和剧情材料可以直接使用数字顺序制引用。游戏本体使用
+\verb|\cite{gakumas_game}|，例如《学園アイドルマスター》\cite{gakumas_game}；
+角色档案使用 \verb|\cite{hiro_character_file}|，例如篠澤広官方档案\cite{hiro_character_file}。
+
+作品内部位置使用 BibLaTeX 的 postnote 给出 Locator。例如：
+
+\begin{verbatim}
+\cite[STEP1 / Episode 8]{hiro_commu_step1_08}
+\cite[Episode 1]{umamusume_anime_ep01}
+\cite[Vol. 1]{haruhi_manga_vol1}
+\end{verbatim}
+
+实际渲染示例：剧情节点\cite[STEP1 / Episode 8]{hiro_commu_step1_08}，
+动画单集\cite[Episode 1]{umamusume_anime_ep01}，漫画单行本\cite[Vol. 1]{haruhi_manga_vol1}。
+同一论断引用多项材料时可使用 \verb|\cite{key1,key2}|，例如官方曲目页面与实体单曲页面\cite{hiro_song_koukei,hiro_1st_single}。
+
+\section{ACGN 与跨媒介来源}
+
+本样例使用真实官方页面演示游戏、角色档案、游戏内剧情、PV、设定资料、虚构校园地图、互动活动、歌曲、单曲、MV、新闻、Live、音频文件、Web 漫画索引、动画单集、漫画单行本、轻小说和开发者访谈。对应来源包括：
+学园偶像大师官方站\cite{hiro_character_pv,hatsuboshi_schoolguide,hatsuboshi_campus_map,hatsuboshi_entrance_exam,gakumas_comics_index}、
+学园偶像大师 Label 与 Live 官方页\cite{gakumas_mv_news,gakumas_first_single_news,gakumas_debut_live_hatsukoi,gakumas_audio_instrumental}、
+赛马娘动画官方 Story\cite{umamusume_anime_ep01}、KADOKAWA 书目页\cite{haruhi_manga_vol1,haruhi_novel_vol1}和 Nintendo 开发者访谈\cite{mario_wonder_developer_interview}。
+
+\section{普通学术文献与 GB/T 类型}
+
+普通期刊、图书、会议论文、学位论文和报告与 ACGN 来源共用同一参考文献表。这里分别演示期刊论文\cite{mnih2015dqn}、图书\cite{sutton_barto_2018}、会议论文\cite{vaswani2017attention}、学位论文\cite{vanhorn2019visipedia}和技术报告\cite{nist_ai_rmf_2023}。
+
+标准、数据集、专利、报纸和数据库使用各自的 BibLaTeX entry type：GB/T 7714-2025\cite{gbt7714_2025}、UCI Iris 数据集\cite{uci_iris}、PageRank 专利\cite{page2001pagerank}、中国科学报数学书评\cite{qiyun2024math}以及 dblp 数据库\cite{dblp_database}。
+
+\section{数字文件与软件工程对象}
+
+JSON、CSV、YAML、Office Open XML、PNG、SVG、WebVTT、ZIP 和 Jupyter Notebook 的公开规范或文档用于演示文件载体引用\cite{rfc8259_json,rfc4180_csv,yaml_122,ecma376_ooxml,w3c_png3,w3c_svg2,w3c_webvtt,pkware_zip_appnote,jupyter_nbformat}。
+软件发行与代码仓库使用 `RELEASE / REPOSITORY` Media Tag，例如 Python 3.14.0\cite{python_3140}、AtelierTeX\cite{ateliertex_repo} 与 biblatex-gb7714-2025\cite{biblatex_gb7714_repo}。
+
+\section{预印本与公共样例边界}
+
+\ifstrequal{\AtelierActualGBStyle}{gb7714-2025}{%
+GB/T 7714-2025 环境原生演示 \verb|@preprint|：Attention Is All You Need 的 arXiv 版本\cite{vaswani2017attention_preprint}。%
+}{%
+当前 TeX 环境使用 \texttt{\AtelierActualGBStyle} 兼容渲染；\texttt{@preprint} 记录保留在 \texttt{references.bib} 中，正式 2025 样式下进入参考文献表。%
+}
+
+`FAN LOCATOR` 保留一个格式 fixture，用于展示字段结构；公共样例不把未经项目人工复核的 fan wiki / fan database 当作证据来源。
+
+\nocite{fan_locator_fixture}
+\printbibliography
+
+\end{document}
