@@ -91,4 +91,4 @@ ATX-ACGN-REF 推荐引用：
 
 ## 许可证
 
-LaTeX 代码采用 **LPPL-1.3c**，详见 [`LICENSE`](LICENSE)。
+本仓库自有源码、文档、示例、测试与项目生成的预览素材采用 **LPPL-1.3c**，维护状态为 `maintained`，当前维护者为 `54wsdf`。详见 [`LICENSE`](LICENSE)、[`LICENSE_SCOPE.md`](LICENSE_SCOPE.md) 与 [`manifest.txt`](manifest.txt)。

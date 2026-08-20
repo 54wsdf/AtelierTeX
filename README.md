@@ -209,5 +209,6 @@ GitHub 标准引用元数据 / GitHub citation metadata：[`CITATION.cff`](CITAT
 
 ## 许可证 / License
 
-LaTeX 代码采用 **LPPL-1.3c**，详见 [`LICENSE`](LICENSE)。  
-LaTeX code is released under **LPPL-1.3c**; see [`LICENSE`](LICENSE).
+本仓库自有源码、文档、示例、测试与项目生成的预览素材采用 **LPPL-1.3c**。项目维护状态为 `maintained`，当前维护者为 `54wsdf`。完整协议、适用范围与 Work 清单分别见 [`LICENSE`](LICENSE)、[`LICENSE_SCOPE.md`](LICENSE_SCOPE.md) 与 [`manifest.txt`](manifest.txt)。
+
+All repository-owned source code, documentation, examples, tests, and project-generated preview assets are released under **LPPL-1.3c**. See [`LICENSE_SCOPE.md`](LICENSE_SCOPE.md) and [`manifest.txt`](manifest.txt) for the exact scope.

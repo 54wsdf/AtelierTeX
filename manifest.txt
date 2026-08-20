@@ -1,0 +1,73 @@
+# AtelierTeX LPPL Work manifest
+#
+# Copyright 2026 54wsdf
+# SPDX-License-Identifier: LPPL-1.3c
+#
+# This work has the LPPL maintenance status `maintained`.
+# The Current Maintainer of this work is 54wsdf.
+# The Work consists exactly of the files listed below.
+
+CHANGELOG.md
+CITATION.cff
+LICENSE_SCOPE.md
+PROJECT.md
+README.md
+assets/README.md
+assets/ateliertex-masthead.png
+atelier.cls
+atelier/README.md
+atelier/bibliography.sty
+atelier/core.sty
+atelier/essay.sty
+atelier/figures.sty
+atelier/fonts.sty
+atelier/languages.sty
+atelier/layout.sty
+atelier/narrative.sty
+atelier/qa.sty
+atelier/tables.sty
+docs/ACGN_BIBLIOGRAPHY.md
+docs/ATX-ACGN-FILE-MATRIX.md
+docs/ATX-ACGN-REF-CATALOG.md
+docs/ATX-ACGN-REF.md
+docs/DEVELOPER_GUIDE.md
+docs/FONTS_AND_LANGUAGES.md
+docs/REAL_WORLD_EXAMPLES.md
+docs/USER_GUIDE.md
+docs/WORD_COMPANION.md
+docs/architecture.md
+docs/assets/rendered/README.md
+docs/assets/rendered/RENDERING_STATUS.md
+docs/assets/rendered/ateliertex-essay-page1.png
+docs/assets/rendered/ateliertex-feature-page1.png
+docs/assets/rendered/ateliertex-symposium-page1.png
+docs/development/BIBLIOGRAPHY_IMPLEMENTATION.md
+docs/development/DEVELOPER_GUIDE.md
+docs/development/README.md
+docs/downstream-contract.md
+examples/README.md
+examples/acgn-research-demo/main.tex
+examples/acgn-research-demo/references.bib
+examples/essay-longread-demo/main.tex
+examples/full-specimen-symposium/main.tex
+examples/full-specimen/README.md
+examples/full-specimen/main.tex
+examples/gbt7714-acgn-profile/README.md
+examples/gbt7714-acgn-profile/main.tex
+examples/gbt7714-acgn-profile/references.bib
+examples/longform-demo/main.tex
+examples/multilingual-demo/main.tex
+examples/narrative-demo/main.tex
+examples/visual-essay-demo/main.tex
+manifest.txt
+profiles/README.md
+profiles/academic.sty
+profiles/editorial.sty
+profiles/essay.sty
+profiles/narrative.sty
+profiles/visual.sty
+tests/README.md
+tests/compile-full-specimen.ps1
+tests/compile-smoke.ps1
+tests/render-readme-preview.ps1
+tests/verify-boundary.ps1
