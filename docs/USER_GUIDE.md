@@ -7,12 +7,15 @@
 推荐环境：
 
 - TeX Live 2026 或兼容发行版；
-- XeLaTeX 或 LuaLaTeX；
+- XeLaTeX（默认推荐，用于规范发布 PDF、分页基准与预览图）；
+- LuaLaTeX（兼容性检查）；
 - `latexmk`；
 - `biber`；
 - 支持 `gb7714-2025` 的当前 `biblatex-gb7714-2015` 宏包。
 
 字体由框架按语言角色和可用性自动解析。
+
+两个引擎都受支持。项目发布与 README 图像以 XeLaTeX 为唯一规范渲染路径；LuaLaTeX 用于确认内容、命令、引用和字形在另一后端中仍然完整，不要求与 XeLaTeX 分页一致。
 
 ## 2. 最小工程
 
@@ -283,6 +286,7 @@ latexmk -lualatex -halt-on-error -interaction=nonstopmode main.tex
 3. `examples/multilingual-demo`：看中日英繁体与字形；
 4. `examples/narrative-demo`：看学术结构与小说式结构；
 5. `examples/longform-demo`：看长文组织；
-6. `examples/visual-essay-demo`：看视觉证据。
+6. `examples/visual-essay-demo`：看视觉证据；
+7. `examples/essay-longread-demo`：看随笔长文、图片与独立标题页接口。
 
 开发、测试、发布门与内部实现集中在 [`development/README.md`](development/README.md)。

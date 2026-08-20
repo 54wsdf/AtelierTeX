@@ -86,7 +86,7 @@ pwsh -File tests/compile-smoke.ps1 -Engine both
 pwsh -File tests/verify-boundary.ps1
 ```
 
-当前六个示例：
+当前七个示例：
 
 - `gbt7714-acgn-profile`：GB/T 7714-2025 + ATX-ACGN-REF；
 - `acgn-research-demo`：ACGN 论文组合；
@@ -94,6 +94,7 @@ pwsh -File tests/verify-boundary.ps1
 - `longform-demo`：长文结构；
 - `narrative-demo`：学术/叙事正交；
 - `visual-essay-demo`：视觉论文。
+- `essay-longread-demo`：随笔长文、图片与标题页接口。
 
 版式相关改动同时人工查看渲染 PDF。
 
@@ -110,7 +111,7 @@ pwsh -File tests/verify-boundary.ps1
 推荐升级流程：
 
 1. AtelierTeX 完成改动；
-2. 六个示例双引擎 smoke test；
+2. 七个示例双引擎 smoke test；
 3. publication profile smoke test；
 4. 真实长稿双引擎测试；
 5. 关键页视觉检查；
@@ -118,8 +119,8 @@ pwsh -File tests/verify-boundary.ps1
 
 ## 10. 发布检查
 
-- [ ] 六个示例 XeLaTeX 通过；
-- [ ] 六个示例 LuaLaTeX 通过；
+- [ ] 七个示例 XeLaTeX 通过；
+- [ ] 七个示例 LuaLaTeX 通过；
 - [ ] `Missing character` 为 0；
 - [ ] `Undefined control sequence` 为 0；
 - [ ] 严重 `LaTeX Error` 为 0；

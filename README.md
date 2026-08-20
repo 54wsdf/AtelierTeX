@@ -128,7 +128,11 @@ Publication Profile 可以替换这一位置与公共元数据槽，但继续复
 
 ## 快速开始 / Quick start
 
-推荐环境 / Recommended environment：TeX Live 2026、XeLaTeX 或 LuaLaTeX、`latexmk`、`biber`，以及提供 `gb7714-2025` 的当前 `biblatex-gb7714` 包。
+推荐环境 / Recommended environment：TeX Live 2026、XeLaTeX、LuaLaTeX、`latexmk`、`biber`，以及提供 `gb7714-2025` 的当前 `biblatex-gb7714` 包。
+
+默认推荐 **XeLaTeX** 生成规范发布 PDF、冻结分页与 README 渲染图；**LuaLaTeX** 作为内容、字形和跨环境兼容性检查。两个引擎都属于受支持后端，但字体度量不同，因此不承诺完全相同的分页。
+
+The canonical release and README-preview engine is **XeLaTeX**. **LuaLaTeX** remains a supported compatibility target; identical pagination across engines is not guaranteed.
 
 ```latex
 \documentclass[profile=editorial,titlelayout=feature]{atelier}
