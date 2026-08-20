@@ -1,5 +1,10 @@
 # 版本变更记录
 
+## 0.5.2 — 2026-08-20
+
+- 新增 `\AtelierSCGlyph`、`\AtelierTCGlyph` 与 `\AtelierJPGlyph`，允许共享汉字按内容语种显式选择 CJK 字形。
+- 增加 U+7BE0 的简中/日文双角色回归样例，避免大字号标题被无条件日文字体 fallback 拆成混合字族。
+
 ## 0.5.1 — 2026-08-20
 
 - 明确 LPPL-1.3c 的 `maintained` 状态、当前维护者与完整 Work 清单。

@@ -6,7 +6,7 @@
 % 防退化说明：上述声明用于明确 LPPL 的维护状态与 Work 边界；后续不得只保留
 % SPDX 标识而删除维护者、维护状态或 manifest 引用。
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{atelier}[2026/08/20 v0.5.1 ACGN multilingual long-form editorial class]
+\ProvidesClass{atelier}[2026/08/20 v0.5.2 ACGN multilingual long-form editorial class]
 
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=atelier,prefix=atelier@}

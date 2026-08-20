@@ -84,6 +84,18 @@ FandolSong
 
 多个无关项目反复使用的字符可以提升到 AtelierTeX 公共兼容语料。
 
+当同一 Unicode 汉字在简中与日文语境中都存在、而公共逐字符 fallback 会把它
+固定到错误语种时，使用语种字形接口显式选择字体角色：
+
+```latex
+\AtelierSCGlyph{7BE0} % 简中字形
+\AtelierTCGlyph{7BE0} % 繁中字形
+\AtelierJPGlyph{7BE0} % 日文字形
+```
+
+参数使用 Unicode 十六进制码位。这些接口用于解决共享汉字的语种字形选择，
+不应替代正常文本输入，也不应通过手工缩放模拟另一套字体。
+
 ## 7. 简中、繁中、日文语义
 
 同一 Unicode 汉字在简体中文、繁体中文和日文环境中可能采用不同字形习惯，因此 AtelierTeX 为三类 CJK 文本提供独立语言角色。
