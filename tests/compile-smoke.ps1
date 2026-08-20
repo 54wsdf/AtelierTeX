@@ -39,7 +39,9 @@ try {
                 throw "Compilation failed: $selectedEngine $example"
             }
             $log = Join-Path $outDir 'main.log'
-            $badLogPattern = 'Missing character:|Undefined control sequence|LaTeX Error:|Citation .+ undefined|There were undefined references'
+            # 防退化说明：LuaLaTeX 的简中可变字体若未绑定粗体，会静默把标题
+            # 回退到常规字重；后续不能只检查缺字和 LaTeX error 而放过该替代。
+            $badLogPattern = 'Missing character:|Undefined control sequence|LaTeX Error:|Citation .+ undefined|There were undefined references|Font shape .*/b/n.* undefined'
             if (Select-String -Path $log -Pattern $badLogPattern -Quiet) {
                 throw "Log QA failed: $selectedEngine $example ($badLogPattern)"
             }

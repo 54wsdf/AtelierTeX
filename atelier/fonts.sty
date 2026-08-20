@@ -4,7 +4,7 @@
 % The Current Maintainer of this work is 54wsdf.
 % This work consists of the files listed in manifest.txt.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{atelier/fonts}[2026/08/20 v0.1.7 portable font roles]
+\ProvidesPackage{atelier/fonts}[2026/08/20 v0.1.8 portable font roles]
 
 \RequirePackage{iftex}
 \ifPDFTeX
@@ -105,16 +105,30 @@
   % 会退回常规字重并产生字体替代警告。
   \newCJKfontfamily\AtelierJPFamily{HaranoAjiMincho-Regular.otf}[BoldFont=HaranoAjiMincho-Bold.otf]
   % 防退化说明：LuaLaTeX 默认 FandolSong 不含部分简中姓名字形。简中稀有字
-  % 必须优先使用真实简中字体并让整段姓名共享同一家族；若系统没有简中扩展
-  % 字体，才退回覆盖完整的 Harano Aji，不能留下缺字或只替换单个放大字形。
+  % 必须优先使用真实简中字体，并让正文主字体、姓名角色及其粗体共享同一家族；
+  % 后续不能只给姓名宏换字体，否则姓名后的标题文字会再次形成可见的混排。
   \IfFontExistsTF{Noto Serif SC}{%
-    \newCJKfontfamily\AtelierSCFamily{Noto Serif SC}
+    \setCJKmainfont{Noto Serif SC}[
+      BoldFont={Noto Serif SC},
+      BoldFeatures={Weight=700},
+      AutoFakeSlant=0.18
+    ]
+    \newCJKfontfamily\AtelierSCFamily{Noto Serif SC}[
+      BoldFont={Noto Serif SC},
+      BoldFeatures={Weight=700},
+      AutoFakeSlant=0.18
+    ]
     \let\AtelierSCGlyphFamily\AtelierSCFamily
   }{\IfFontExistsTF{LXGW Neo ZhiSong}{%
-    \newCJKfontfamily\AtelierSCFamily{LXGW Neo ZhiSong}[AutoFakeBold=2]
+    \setCJKmainfont{LXGW Neo ZhiSong}[AutoFakeBold=2,AutoFakeSlant=0.18]
+    \newCJKfontfamily\AtelierSCFamily{LXGW Neo ZhiSong}[AutoFakeBold=2,AutoFakeSlant=0.18]
     \let\AtelierSCGlyphFamily\AtelierSCFamily
   }{%
-    \newcommand{\AtelierSCFamily}{\rmfamily}
+    \setCJKmainfont{HaranoAjiMincho-Regular.otf}[
+      BoldFont=HaranoAjiMincho-Bold.otf,
+      AutoFakeSlant=0.18
+    ]
+    \let\AtelierSCFamily\AtelierJPFamily
     \let\AtelierSCGlyphFamily\AtelierJPFamily
   }}
   \newcommand{\AtelierTCFamily}{\rmfamily}

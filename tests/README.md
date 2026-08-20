@@ -35,6 +35,7 @@ pwsh -File tests/compile-smoke.ps1 -Engine both
 - `LaTeX Error:`；
 - undefined citation；
 - undefined reference；
+- CJK 粗体被静默替换为常规字重；
 - 最终 PDF 生成状态。
 
 ## `verify-boundary.ps1`
